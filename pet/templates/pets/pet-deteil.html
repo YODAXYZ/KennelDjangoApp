@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="main-content">
+    <div class="col-lg-4">
+        <a href="#">
+            <img width="400"
+                 src="{{ object.image.url }}" alt="" class="fit">
+        </a>
+    </div>
+    <div class="pet-bio-text">
+        <ul>
+            <li>Кличка: {{object.nickname}}</li>
+            <li>Возраст: {{object.age}}</li>
+            <li>Порода: {{object.breed}}</li>
+            {% if object.sterilized %}
+            <li>Стерилизован(a)</li>
+            {% else %}
+            <li>Не стерилизован(а)</li>
+            {% endif %}
+        </ul>
+        <h2>Описание:</h2>
+        <p>{{ object.description }}</p>
+    </div>
+</div>
+{% endblock %}

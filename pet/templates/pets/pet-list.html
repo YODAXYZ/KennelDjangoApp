@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="main-content">
+    {% for pet in object_list %}
+        <div class="gallery">
+          <a href="/pets/{{pet.pk}}">
+            <img src="{{ pet.image.url }}" alt="Cinque Terre" width="600" height="400">
+          <div class="desc">{{ pet.nickname }}</div>
+          </a>
+        </div>
+
+    {% endfor %}
+</div>
+{% endblock %}
